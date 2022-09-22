@@ -4,8 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//test
-
 namespace Program4
 {
     internal class FindTheIslandGame
