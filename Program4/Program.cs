@@ -19,10 +19,17 @@ namespace Program4
             Application.Run(new Form1());
 
             // This is an example of how you'd initialize the object
-            NavigationSystem GPS = new NavigationSystem(4, 5);
+            NavigationSystem GPS = new NavigationSystem(10, 10);
             GPS.PrintMap();
-            GPS.EvaluateGuess(0, 0);
-            GPS.PrintMap();
+            
+            /*// For testing the logic of Evaluate guess
+            for(int i = 0; i < 10; i++)
+            {
+                GPS.EvaluateGuess(i, i);
+                GPS.PrintMap();
+            }
+            Console.WriteLine($"{GPS.islandRow}, {GPS.islandCol}"); */
+
         }
     }
 }

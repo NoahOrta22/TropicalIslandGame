@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,33 @@ using System.Threading.Tasks;
 
 namespace Program4
 {
+    /*
+    *   Checker
+    *
+    *   Description:
+    *       Main logic of the system. Takes care of the backend processes
+    *       like setting up the map, initializing island coordinates,
+    *       evaluating the users guess, printing the map, etc
+    *
+    *
+    *   Public:
+    *       
+    *                       NavigationSystem()
+    *                       NavigationSystem(int r, int c)
+    *
+    *       private void    MakeMap()
+    *       public  void    PrintMap()
+    *       private void    setIslandLocation()
+    *       public  bool    EvaluateGuess(int r, int c)
+    *       private char    directionHint(int r, int c)
+    *
+    *   Usage:
+    *       NavigationSystem GPS = new NavigationSystem(5, 4)
+    *       - makes an object 
+    *       
+    *       GPS.EvaluateGuess(2, 3)                    - says if user if right
+    *
+    */
     internal class NavigationSystem
     {
 
@@ -15,8 +43,8 @@ namespace Program4
         private int numRow;                // number of rows in the map/grid
         private int numCol;                // number of columns in the map/grid
 
-        private int islandRow;             // coordinate for islands row
-        private int islandCol;             // coordinate for islands column
+        public int islandRow;              // coordinate for islands row
+        public int islandCol;              // coordinate for islands column
 
         private int numGuess;
 
@@ -41,6 +69,10 @@ namespace Program4
             setIslandLocation();
         }
 
+        // Parameterized Constructor
+        // Params:
+        //      int r - number of rows
+        //      int c - number of columns
         public NavigationSystem(int r, int c)
         {
             numRow = r;         //  number of rows in the map
@@ -76,10 +108,12 @@ namespace Program4
 
         // Description:
         //      Prints out the current map in a formatted way
+        //
+        //      CURRENTLY TO THE CONSOLE
         public void PrintMap()
         {
-            Console.Write("  ");                 // 2 spaces for the formatting
-            for(int i = 0; i < numRow+1; i++)
+            Console.Write("  ");                // 2 spaces for the formatting
+            for(int i = 0; i < numRow; i++)
             {
                 Console.Write(i);
             }
@@ -99,8 +133,8 @@ namespace Program4
         //      Sets random coordinates for the Secret Island
         private void setIslandLocation()
         {
-            islandCol = rnd.Next(numCol + 1);  // gets a random col coordinate
-            islandRow = rnd.Next(numRow + 1);  // gets a random row coordinate
+            islandCol = rnd.Next(numCol);  // gets a random col coordinate
+            islandRow = rnd.Next(numRow);  // gets a random row coordinate
         }
 
         //  Description:
@@ -113,6 +147,9 @@ namespace Program4
         //  Description:
         //      Evaluates the user's guess and tells them whether they were
         //      right or wrong
+        // Params: 
+        //      int r - value of row guess
+        //      int c - value of column guess
         public bool EvaluateGuess(int r, int c)
         {
             numGuess++;                        // increment the number of guesses
@@ -133,6 +170,9 @@ namespace Program4
         //      Gives the user a hint to go if they were wrong by changing
         //      the map, and displays an "I" for the island.
         //      this function does all the thinking to see where the island is.
+        // Params: 
+        //      int r - value of row guess
+        //      int c - value of column guess
         private char directionHint(int r, int c)
         {
             char hint = ' ';
@@ -162,7 +202,7 @@ namespace Program4
                 }
                 // the number of guesses is odd (returns East or West)
                 else {
-                    hint = (c > islandRow) ? 'W' : 'E';
+                    hint = (c > islandCol) ? 'W' : 'E';
                 }
             }
 
