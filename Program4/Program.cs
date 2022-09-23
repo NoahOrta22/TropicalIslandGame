@@ -16,7 +16,7 @@ namespace Program4
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Game());
 
             // This is an example of how you'd initialize the object
             NavigationSystem GPS = new NavigationSystem(10, 10);
