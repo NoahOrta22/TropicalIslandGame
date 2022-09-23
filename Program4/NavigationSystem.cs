@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Program4
 {
     /*
-    *   Checker
+    *   NavigationSystem
     *
     *   Description:
     *       Main logic of the system. Takes care of the backend processes
