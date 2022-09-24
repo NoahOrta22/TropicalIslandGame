@@ -77,7 +77,7 @@ namespace Program4
         public NavigationSystem(int r, int c)
         {
 
-            if(r > 10 || c > 10)
+            if(r > 15 || c > 20)
             {
                 numRow = 10;
                 numCol = 10;
@@ -122,17 +122,29 @@ namespace Program4
         {
             waves = "";
             waves+="  ";                // 2 spaces for the formatting
+
+            //  Numbers at top for the x-axis
             for(int i = 0; i < numCol; i++)
             {
-                waves += i;
+                waves += $"{i} ";
+                //waves += i;
             }
             waves += '\n';
             for (int i = 0; i < numRow; i++)
             {
+
                 waves += $"{i} ";
                 for (int j = 0; j < numCol; j++)
                 {
                     waves += map[i,j];
+
+
+                    // formatting for the spaces between waves
+                    int numSpaces = j.ToString().Length;
+                    for(int k = 0; k < numSpaces; k++)
+                    {
+                        waves += " ";
+                    }
                 }
                 waves += "\n";
             }
