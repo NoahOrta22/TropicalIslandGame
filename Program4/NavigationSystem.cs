@@ -75,8 +75,16 @@ namespace Program4
         //      int c - number of columns
         public NavigationSystem(int r, int c)
         {
-            numRow = r;         //  number of rows in the map
-            numCol = c;         //  number of columns in the map
+
+            if(r > 10 || c > 10)
+            {
+                numRow = 10;
+                numCol = 10;
+            }
+            else { 
+                 numRow = r;         //  number of rows in the map
+                 numCol = c;         //  number of columns in the map
+            }
 
             numGuess = 0;       // the user hasn't guessed anything yet
 
