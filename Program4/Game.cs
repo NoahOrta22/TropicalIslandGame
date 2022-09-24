@@ -13,6 +13,11 @@ namespace Program4
 {
     public partial class Game : Form
     {
+        //Initialized to hold map creation
+        string output = "";
+        //Used to keep track if the game is running 
+        bool running = false;
+
         public Game()
         {
             InitializeComponent();
@@ -21,8 +26,7 @@ namespace Program4
 
         private void MapSizeButton_Click(object sender, EventArgs e)
         {
-            //Initialized to hold map creation
-            string output = "";
+
 
             //Gets data from form controls
             int MapRowCount = Int32.Parse(MapRows.Text);
@@ -35,13 +39,57 @@ namespace Program4
             navigationSystem.PrintMap(ref output);
             MapOutput.Text = output;
 
+            //Resets map size texts
             MapRows.Text = "";
             MapCol.Text = "";
+            
+            //Prohibits any further changes to the map size when game starts
+            running = true;
+            if (running)
+            {
+                MapSizeButton.Enabled = false;
+                MapRows.Enabled = false;
+                MapCol.Enabled = false;
+                RowGuess.Enabled = true;
+                ColumnGuess.Enabled = true;
+                GuessEnterButton.Enabled = true;
+
+            }
 
         }
       
         private void GuessEnterButton_Click(object sender, EventArgs e)
         {
+
+            //holds guess answer
+            bool guessResult;
+
+            //Gets data from form controls
+            int MapRowGuess = Int32.Parse(RowGuess.Text);
+            int MapColumnGuess =Int32.Parse(ColumnGuess.Text);
+
+            //Checks the input of the guesses
+            FindTheIslandGame findTheIslandGame = new FindTheIslandGame(MapRowGuess,MapColumnGuess);
+            //Initializes guess checker
+            NavigationSystem GuessChecker = new NavigationSystem();
+
+            //Sets guessResult to true (correct) or false (wrong)
+            guessResult = GuessChecker.EvaluateGuess(findTheIslandGame.Row,findTheIslandGame.Col);
+
+            if (guessResult)
+            {
+                GuessEnterButton.Enabled = false;
+                GuessChecker.PrintMap(ref output);
+                MapOutput.Text = output;
+                running = false;
+            }
+
+            GuessChecker.PrintMap(ref output);
+            MapOutput.Text = output;
+
+            //Clears text boxes guesses
+            RowGuess.Text = "";
+            ColumnGuess.Text = "";
 
         }
 
@@ -60,5 +108,32 @@ namespace Program4
             MessageBox.Show(instructText, "Instructions", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        private void QuitButton_Click(object sender, EventArgs e)
+        {
+            running = false;
+            output = "";
+            GuessEnterButton.Enabled = false;
+            MapSizeButton.Enabled = false;
+            MapRows.Enabled = false;
+            MapCol.Enabled = false;
+            RowGuess.Enabled = false;
+            ColumnGuess.Enabled = false;
+
+        }
+
+        private void RestartButton_Click(object sender, EventArgs e)
+        {
+            output = "";
+
+            //Will not allow a guess until the map is created 
+            RowGuess.Enabled = true;
+            ColumnGuess.Enabled = true;
+            GuessEnterButton.Enabled = true;
+
+            //Enables mapsizing buttons when new game is created 
+            MapSizeButton.Enabled = true;
+            MapRows.Enabled = true;
+            MapCol.Enabled = true;
+        }
     }
 }

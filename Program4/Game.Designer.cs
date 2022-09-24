@@ -47,6 +47,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.MapOutput = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.QuitButton = new System.Windows.Forms.Button();
+            this.RestartButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -238,12 +240,38 @@
             this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
+            // QuitButton
+            // 
+            this.QuitButton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QuitButton.ForeColor = System.Drawing.Color.ForestGreen;
+            this.QuitButton.Location = new System.Drawing.Point(728, 254);
+            this.QuitButton.Name = "QuitButton";
+            this.QuitButton.Size = new System.Drawing.Size(102, 53);
+            this.QuitButton.TabIndex = 7;
+            this.QuitButton.Text = "Quit";
+            this.QuitButton.UseVisualStyleBackColor = true;
+            this.QuitButton.Click += new System.EventHandler(this.QuitButton_Click);
+            // 
+            // RestartButton
+            // 
+            this.RestartButton.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RestartButton.ForeColor = System.Drawing.Color.ForestGreen;
+            this.RestartButton.Location = new System.Drawing.Point(620, 254);
+            this.RestartButton.Name = "RestartButton";
+            this.RestartButton.Size = new System.Drawing.Size(102, 53);
+            this.RestartButton.TabIndex = 14;
+            this.RestartButton.Text = "Restart";
+            this.RestartButton.UseVisualStyleBackColor = true;
+            this.RestartButton.Click += new System.EventHandler(this.RestartButton_Click);
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(856, 341);
+            this.Controls.Add(this.RestartButton);
+            this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Instructions);
@@ -268,17 +296,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button MapSizeButton;
-        private System.Windows.Forms.TextBox MapRows;
+        public System.Windows.Forms.Button MapSizeButton;
+        public System.Windows.Forms.TextBox MapRows;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox MapCol;
+        public System.Windows.Forms.TextBox MapCol;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox RowGuess;
+        public System.Windows.Forms.TextBox RowGuess;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button GuessEnterButton;
-        private System.Windows.Forms.TextBox ColumnGuess;
+        public System.Windows.Forms.Button GuessEnterButton;
+        public System.Windows.Forms.TextBox ColumnGuess;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -286,6 +314,8 @@
         private System.Windows.Forms.GroupBox groupBox3;
         public System.Windows.Forms.Label MapOutput;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button QuitButton;
+        private System.Windows.Forms.Button RestartButton;
     }
 }
 
