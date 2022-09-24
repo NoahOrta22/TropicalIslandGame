@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Program4
 {
@@ -34,7 +35,7 @@ namespace Program4
     *       GPS.EvaluateGuess(2, 3)                    - says if user if right
     *
     */
-    internal class NavigationSystem
+    public class NavigationSystem : Game
     {
 
         //  Member Variables
@@ -110,22 +111,23 @@ namespace Program4
         //      Prints out the current map in a formatted way
         //
         //      CURRENTLY TO THE CONSOLE
-        public void PrintMap()
+        public void PrintMap(ref string waves)
         {
-            Console.Write("  ");                // 2 spaces for the formatting
+            waves = "";
+            waves+="  ";                // 2 spaces for the formatting
             for(int i = 0; i < numRow; i++)
             {
-                Console.Write(i);
+                waves += i;
             }
-            Console.Write('\n');
+            waves += '\n';
             for (int i = 0; i < numRow; i++)
             {
-                Console.Write($"{i} ");
+                waves += $"{i} ";
                 for (int j = 0; j < numCol; j++)
                 {
-                    Console.Write(map[i,j]);
+                    waves += map[i,j];
                 }
-                Console.Write("\n");
+                waves += "\n";
             }
         }
 

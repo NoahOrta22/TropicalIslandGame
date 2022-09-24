@@ -44,9 +44,14 @@
             this.Title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Instructions = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.MapOutput = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // MapSizeButton
@@ -71,7 +76,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 14);
+            this.label1.Size = new System.Drawing.Size(39, 16);
             this.label1.TabIndex = 4;
             this.label1.Text = "Rows";
             // 
@@ -87,7 +92,7 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(61, 27);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 14);
+            this.label2.Size = new System.Drawing.Size(63, 16);
             this.label2.TabIndex = 6;
             this.label2.Text = "Columns";
             // 
@@ -98,7 +103,7 @@
             this.groupBox1.Controls.Add(this.MapSizeButton);
             this.groupBox1.Controls.Add(this.MapCol);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Font = new System.Drawing.Font("HP Simplified Hans", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.SaddleBrown;
             this.groupBox1.Location = new System.Drawing.Point(12, 88);
             this.groupBox1.Name = "groupBox1";
@@ -114,7 +119,7 @@
             this.groupBox2.Controls.Add(this.GuessEnterButton);
             this.groupBox2.Controls.Add(this.ColumnGuess);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Font = new System.Drawing.Font("HP Simplified Hans", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.SaddleBrown;
             this.groupBox2.Location = new System.Drawing.Point(12, 207);
             this.groupBox2.Name = "groupBox2";
@@ -135,7 +140,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(61, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 14);
+            this.label3.Size = new System.Drawing.Size(71, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Column #";
             // 
@@ -162,7 +167,7 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(6, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(42, 14);
+            this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 4;
             this.label4.Text = "Row #";
             // 
@@ -171,7 +176,7 @@
             this.Title.AutoSize = true;
             this.Title.Font = new System.Drawing.Font("HP Simplified", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Title.ForeColor = System.Drawing.Color.ForestGreen;
-            this.Title.Location = new System.Drawing.Point(266, 18);
+            this.Title.Location = new System.Drawing.Point(300, 21);
             this.Title.Name = "Title";
             this.Title.Size = new System.Drawing.Size(262, 32);
             this.Title.TabIndex = 9;
@@ -180,8 +185,9 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(534, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(568, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(56, 50);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -190,9 +196,9 @@
             // 
             // Instructions
             // 
-            this.Instructions.Font = new System.Drawing.Font("HP Simplified Hans", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Instructions.Font = new System.Drawing.Font("Courier New", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Instructions.ForeColor = System.Drawing.Color.ForestGreen;
-            this.Instructions.Location = new System.Drawing.Point(12, 36);
+            this.Instructions.Location = new System.Drawing.Point(12, 27);
             this.Instructions.Name = "Instructions";
             this.Instructions.Size = new System.Drawing.Size(200, 35);
             this.Instructions.TabIndex = 11;
@@ -200,12 +206,46 @@
             this.Instructions.UseVisualStyleBackColor = true;
             this.Instructions.Click += new System.EventHandler(this.Instructions_Click);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.MapOutput);
+            this.groupBox3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.groupBox3.Location = new System.Drawing.Point(272, 88);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(342, 219);
+            this.groupBox3.TabIndex = 12;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Map";
+            // 
+            // MapOutput
+            // 
+            this.MapOutput.AutoSize = true;
+            this.MapOutput.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MapOutput.Location = new System.Drawing.Point(30, 21);
+            this.MapOutput.Name = "MapOutput";
+            this.MapOutput.Size = new System.Drawing.Size(0, 22);
+            this.MapOutput.TabIndex = 4;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(238, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(56, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 13;
+            this.pictureBox2.TabStop = false;
+            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.Instructions);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Title);
@@ -218,6 +258,9 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,6 +283,9 @@
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Instructions;
+        private System.Windows.Forms.GroupBox groupBox3;
+        public System.Windows.Forms.Label MapOutput;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

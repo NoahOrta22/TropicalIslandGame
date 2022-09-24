@@ -16,10 +16,27 @@ namespace Program4
         public Game()
         {
             InitializeComponent();
+
         }
 
         private void MapSizeButton_Click(object sender, EventArgs e)
         {
+            //Initialized to hold map creation
+            string output = "";
+
+            //Gets data from form controls
+            int MapRowCount = Int32.Parse(MapRows.Text);
+            int MapColumnCount = Int32.Parse(MapCol.Text);
+            
+            //Initializes object of user inputted size
+            NavigationSystem navigationSystem = new NavigationSystem(MapRowCount, MapColumnCount);
+            
+            //References the creation of map processes and sets equal to label
+            navigationSystem.PrintMap(ref output);
+            MapOutput.Text = output;
+
+            MapRows.Text = "";
+            MapCol.Text = "";
 
         }
       
