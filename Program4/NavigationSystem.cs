@@ -118,12 +118,11 @@ namespace Program4
         // Description:
         //      Prints out the current map in a formatted way
         //
-        //      CURRENTLY TO THE CONSOLE
         public void PrintMap(ref string waves)
         {
             waves = "";
             waves+="  ";                // 2 spaces for the formatting
-            for(int i = 0; i < numRow; i++)
+            for(int i = 0; i < numCol; i++)
             {
                 waves += i;
             }
