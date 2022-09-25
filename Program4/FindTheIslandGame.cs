@@ -23,14 +23,7 @@ namespace Program4
         public FindTheIslandGame(int row, int col)
         {
             Guesscount++;
-            if (row > 0)
-                rowGuess = row;
-            else
-                rowGuess = 1;
-            if (col > 0)
-                colGuess = col;
-            else
-                colGuess = 1;
+
         }
 
         public int Row

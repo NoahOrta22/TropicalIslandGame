@@ -18,18 +18,6 @@ namespace Program4
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Game());
 
-            // This is an example of how you'd initialize the object
-            /*NavigationSystem GPS = new NavigationSystem(10, 10);
-            GPS.PrintMap();*/
-            
-            /*// For testing the logic of Evaluate guess
-            for(int i = 0; i < 10; i++)
-            {
-                GPS.EvaluateGuess(i, i);
-                GPS.PrintMap();
-            }
-            Console.WriteLine($"{GPS.islandRow}, {GPS.islandCol}"); */
-
         }
     }
 }

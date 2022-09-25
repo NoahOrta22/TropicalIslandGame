@@ -132,8 +132,11 @@ namespace Program4
             waves += '\n';
             for (int i = 0; i < numRow; i++)
             {
-
-                waves += $"{i} ";
+                //accounts for the formatting of a double digit row number
+                if (i <10)
+                    waves += $"{i} ";
+                else
+                    waves += $"{i}";
                 for (int j = 0; j < numCol; j++)
                 {
                     waves += map[i,j];
