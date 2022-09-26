@@ -26,7 +26,7 @@ namespace Program4
             "5. Once a game has been completed, click the \"Restart\" button to play again.\n\n" +
             "ENJOY!";
             MessageBox.Show(instructText, "Instructions", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Game());

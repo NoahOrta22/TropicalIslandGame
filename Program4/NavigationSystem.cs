@@ -58,7 +58,7 @@ namespace Program4
             numRow = 4;                     //  number of rows in the map
             numCol = 4;                     //  number of columns in the map
 
-            numGuess = 1;
+            numGuess = 0;
 
             //  initialize the size of the map
             map = new char[numRow, numCol];
@@ -88,7 +88,7 @@ namespace Program4
                  numCol = c;         //  number of columns in the map
             }
 
-            numGuess = 1;            // the user hasn't guessed anything yet
+            numGuess = 0;            // the user hasn't guessed anything yet
 
             //  initialize the size of the map
             map = new char[numRow, numCol];
