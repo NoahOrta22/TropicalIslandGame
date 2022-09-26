@@ -104,7 +104,7 @@ namespace Program4
                 {
                     //Shows user the number of guesses
                     NumGuess = navigationSystem.Guess;
-                    MapBox.Text = "Map    Guesses:" + NumGuess;
+                    MapBox.Text = "Map    Guesses:" + NumGuess-1;
 
                     navigationSystem.PrintMap(ref output);
                     MapOutput.Text = output;

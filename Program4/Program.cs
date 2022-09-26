@@ -8,6 +8,7 @@ namespace Program4
 {
     internal static class Program
     {
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -31,5 +32,6 @@ namespace Program4
             Application.Run(new Game());
 
         }
+        
     }
 }
