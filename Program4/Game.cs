@@ -40,6 +40,11 @@ namespace Program4
             MapRowCount = Int32.Parse(MapRows.Text);
             MapColumnCount = Int32.Parse(MapCol.Text);
 
+            //Max map size that we will expect is 11x11 if it's bigger then we need to check variables
+            MapRowCount = (MapRowCount>11) ? 10 : MapRowCount;          // entered to large of row size
+            MapColumnCount = (MapColumnCount>11) ? 10 : MapColumnCount; // entered to large of column size
+
+
             //Initializes map from map size
             navigationSystem = new NavigationSystem(MapRowCount, MapColumnCount);
 
@@ -70,8 +75,9 @@ namespace Program4
         {
 
             //Message shown when user chooses the correct answer
-            string CorrectGuess = "Congratulations! You have chosen the correct location of the island at:(" + RowGuess.Text + "," + ColumnGuess.Text + ") \n" +
-                "To play again with a different map, click the \"Resart\" button";
+            string CorrectGuess = "Congratulations! You have chosen the correct location of the island at:(" + RowGuess.Text + "," + ColumnGuess.Text + 
+                ") in " + navigationSystem.Guess + " guess(es)\n" + "To play again with a different map, click the \"Resart\" button";
+                
 
             //holds guess answer
             bool guessResult;

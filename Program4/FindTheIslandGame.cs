@@ -32,13 +32,13 @@ namespace Program4
 
         private void Checkguess()
         {
-            if (rowGuess > mapRows)
+            if (rowGuess >= mapRows)
             {
                 MessageBox.Show("You guessed larger than the map! Your guess is being set to (0,0)","Illegal Guess",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 rowGuess = 0;
                 colGuess = 0;
             }
-            else if (colGuess > mapCols)
+            else if (colGuess >= mapCols)
             {
                 MessageBox.Show("You guessed larger than the map! Your guess is being set to (0,0)", "Illegal Guess", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 rowGuess = 0;
