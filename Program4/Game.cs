@@ -154,18 +154,23 @@ namespace Program4
 
         private void QuitButton_Click(object sender, EventArgs e)
         {
+            //Disables all further input until game is restarted
             MapSizeButton.Enabled = false;
             MapRows.Enabled = false;
             MapCol.Enabled = false;
             RowGuess.Enabled = false;
             ColumnGuess.Enabled = false;
             GuessEnterButton.Enabled = false;
+
             //Resets map 
             MapOutput.Text = "";
             string quitMessage = "You have quit the game, I guess it was too hard! Click the \"Resart\" button to play again with an easier map size";
 
             //Message printed to screen
             MessageBox.Show(quitMessage, "You have Quit", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            //Resets the number of Guesses
+            MapBox.Text = "Map";
 
         }
 
@@ -180,8 +185,12 @@ namespace Program4
             MapSizeButton.Enabled = true;
             MapRows.Enabled = true;
             MapCol.Enabled = true;
+
             //Clears the map
             MapOutput.Text = "";
+
+            //Resets the number of Guesses
+            MapBox.Text = "Map";
         }
     }
 }
