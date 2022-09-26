@@ -44,8 +44,9 @@ namespace Program4
             MapColumnCount = Int32.Parse(MapCol.Text);
 
             //Max map size that we will expect is 11x11 if it's bigger then we need to check variables
-            MapRowCount = (MapRowCount>11) ? 10 : MapRowCount;          // entered to large of row size
-            MapColumnCount = (MapColumnCount>11) ? 10 : MapColumnCount; // entered to large of column size
+            //Checking to make sure map initialization is in bounds
+            MapRowCount = (MapRowCount>11 || MapRowCount<1) ? 10 : MapRowCount;
+            MapColumnCount = (MapColumnCount>11 || MapColumnCount<1) ? 10 : MapColumnCount;
 
 
             //Initializes map from map size
