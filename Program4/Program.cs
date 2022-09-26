@@ -8,6 +8,7 @@ namespace Program4
 {
     internal static class Program
     {
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -25,11 +26,12 @@ namespace Program4
             "5. Once a game has been completed, click the \"Restart\" button to play again.\n\n" +
             "ENJOY!";
             MessageBox.Show(instructText, "Instructions", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Game());
 
         }
+        
     }
 }
