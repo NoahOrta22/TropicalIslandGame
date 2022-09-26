@@ -58,7 +58,7 @@ namespace Program4
             numRow = 4;                     //  number of rows in the map
             numCol = 4;                     //  number of columns in the map
 
-            numGuess = 1;
+            numGuess = 0;
 
             //  initialize the size of the map
             map = new char[numRow, numCol];
@@ -76,18 +76,19 @@ namespace Program4
         //      int c - number of columns
         public NavigationSystem(int r, int c)
         {
-
-            if(r > 11 || c > 11)
+            //Limits the size of map
+            if(r > 11 || c > 11 || r == 0 || c== 0)     //Checks map's bounds and resizes if illegal
             {
-                numRow = 10;
-                numCol = 10;
+                MessageBox.Show("You entered an invalid map size \n Size is being set to 11x11", "Invalid Map Size", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                numRow = 11;
+                numCol = 11;
             }
             else { 
                  numRow = r;         //  number of rows in the map
                  numCol = c;         //  number of columns in the map
             }
 
-            numGuess = 1;            // the user hasn't guessed anything yet
+            numGuess = 0;            // the user hasn't guessed anything yet
 
             //  initialize the size of the map
             map = new char[numRow, numCol];
@@ -137,6 +138,7 @@ namespace Program4
                     waves += $"{i} ";
                 else
                     waves += $"{i}";
+
                 for (int j = 0; j < numCol; j++)
                 {
                     waves += map[i,j];

@@ -7,6 +7,29 @@ using System.Windows.Forms;
 
 namespace Program4
 {
+    /*
+*   FindTheIslandGame
+*
+*   Description:
+*       Controls the overflow of the game
+*       It presents the guesses of the user to the navigation system
+*       
+*
+*
+*   Public:
+*       
+*                       FindTheIslandGame()
+*                       SetParameters(int rowguess, int colguess, int rows, int cols)
+*
+*       private void    Checkguess()
+*
+*   Usage:
+*       FindTheIslandGame Game = new FindIslandGame();
+*       - makes an object 
+*       
+*       Game.Checkguess(2, 3,11,11)                    - checks if the guess is within the bounds of the map
+*
+*/
     public class FindTheIslandGame : Game
     {
         //member variables
@@ -15,6 +38,7 @@ namespace Program4
         private int mapRows;
         private int mapCols;
 
+        //Defaults
         public FindTheIslandGame()
         {
             rowGuess = 4;
