@@ -77,7 +77,7 @@ namespace Program4
         public NavigationSystem(int r, int c)
         {
 
-            if(r > 15 || c > 20)
+            if(r > 11 || c > 11)
             {
                 numRow = 10;
                 numCol = 10;
