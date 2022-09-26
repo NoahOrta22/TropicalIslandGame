@@ -18,6 +18,9 @@ namespace Program4
         //Used to keep track if the game is running 
         bool running = false;
 
+        //Keeps track of the numnber of guesses
+        int NumGuess;
+
         //Initializes object
         NavigationSystem navigationSystem;
         FindTheIslandGame game;
@@ -76,7 +79,7 @@ namespace Program4
 
             //Message shown when user chooses the correct answer
             string CorrectGuess = "Congratulations! You have chosen the correct location of the island at:(" + RowGuess.Text + "," + ColumnGuess.Text + 
-                ") in " + navigationSystem.Guess + " guess(es)\n" + "To play again with a different map, click the \"Resart\" button";
+                ") in " + (NumGuess + 1) + " guess(es)\n" + "To play again with a different map, click the \"Resart\" button";
                 
 
             //holds guess answer
@@ -98,6 +101,10 @@ namespace Program4
                 //If the correct location was choosen
                 if (guessResult)
                 {
+                    //Shows user the number of guesses
+                    NumGuess = navigationSystem.Guess;
+                    MapBox.Text = "Map    Guesses:" + NumGuess;
+
                     navigationSystem.PrintMap(ref output);
                     MapOutput.Text = output;
                     running = false;
@@ -117,6 +124,10 @@ namespace Program4
                 //Prints updated map
                 navigationSystem.PrintMap(ref output);
                 MapOutput.Text = output;
+
+                //Shows user the number of guesses
+                NumGuess = navigationSystem.Guess;
+                MapBox.Text = "Map    Guesses:" + NumGuess;
 
                 //Clears text boxes guesses
                 RowGuess.Text = "";

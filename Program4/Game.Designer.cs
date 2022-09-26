@@ -44,7 +44,7 @@
             this.Title = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Instructions = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.MapBox = new System.Windows.Forms.GroupBox();
             this.MapOutput = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.QuitButton = new System.Windows.Forms.Button();
@@ -60,7 +60,7 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox3.SuspendLayout();
+            this.MapBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -224,17 +224,17 @@
             this.Instructions.UseVisualStyleBackColor = true;
             this.Instructions.Click += new System.EventHandler(this.Instructions_Click);
             // 
-            // groupBox3
+            // MapBox
             // 
-            this.groupBox3.Controls.Add(this.MapOutput);
-            this.groupBox3.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.groupBox3.Location = new System.Drawing.Point(218, 93);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(344, 290);
-            this.groupBox3.TabIndex = 12;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Map";
+            this.MapBox.Controls.Add(this.MapOutput);
+            this.MapBox.Font = new System.Drawing.Font("Courier New", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MapBox.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.MapBox.Location = new System.Drawing.Point(218, 93);
+            this.MapBox.Name = "MapBox";
+            this.MapBox.Size = new System.Drawing.Size(344, 290);
+            this.MapBox.TabIndex = 12;
+            this.MapBox.TabStop = false;
+            this.MapBox.Text = "Map";
             // 
             // MapOutput
             // 
@@ -386,7 +386,7 @@
             this.Controls.Add(this.RestartButton);
             this.Controls.Add(this.QuitButton);
             this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.MapBox);
             this.Controls.Add(this.Instructions);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Title);
@@ -399,8 +399,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.MapBox.ResumeLayout(false);
+            this.MapBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
@@ -432,7 +432,7 @@
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button Instructions;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox MapBox;
         public System.Windows.Forms.Label MapOutput;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button QuitButton;

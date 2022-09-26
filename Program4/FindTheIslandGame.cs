@@ -45,6 +45,7 @@ namespace Program4
             colGuess = 4;
         }
 
+
         public void SetParameters(int rowguess, int colguess, int rows, int cols)
         {
             rowGuess = rowguess;
