@@ -1,4 +1,11 @@
-﻿using System;
+﻿//  Game Class
+
+//  Controls the functionality of the button clicks 
+//  Calls NavigationSystem and FindTheIslandGame classes
+//  for user input manipulation
+//  Returns output of the game 
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

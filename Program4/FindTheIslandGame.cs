@@ -1,4 +1,9 @@
-﻿using System;
+﻿//   FindTheIslandGame Class
+
+//  Controls the overflow of the game
+//It presents the guesses of the user to the navigation system
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
