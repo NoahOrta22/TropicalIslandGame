@@ -1,4 +1,9 @@
-﻿
+﻿//  Navigation System Class
+
+//  Main logic of the system. Takes care of the backend processes
+//  like setting up the map, initializing island coordinates,
+//  evaluating the users guess, printing the map, etc
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -77,9 +82,11 @@ namespace Program4
         public NavigationSystem(int r, int c)
         {
             //Limits the size of map
-            if(r > 11 || c > 11 || r == 0 || c== 0)     //Checks map's bounds and resizes if illegal
+            //Checks map's bounds and resizes if illegal
+            if(r > 11 || c > 11 || r == 0 || c== 0) 
             {
                 MessageBox.Show("You entered an invalid map size \n Size is being set to 11x11", "Invalid Map Size", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                 numRow = 11;
                 numCol = 11;
             }
